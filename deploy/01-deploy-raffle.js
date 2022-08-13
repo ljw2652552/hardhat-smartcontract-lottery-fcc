@@ -58,10 +58,10 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     await vrfCoordinatorV2Mock.addConsumer(subscriptionId, raffle.address);
   }
 
-  // Verify the deployment
-  //   if (!developmentChains.includes(network.name) && process.env.ES_API_KEY) {
-  //     log("Verifying...");
-  //     await verify(raffle.address, arguments);
-  //   }
+  //Verify the deployment
+  if (!developmentChains.includes(network.name) && process.env.ES_API_KEY) {
+    log("Verifying...");
+    await verify(raffle.address, arguments);
+  }
 };
 module.exports.tags = ["all", "raffle"];

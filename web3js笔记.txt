@@ -1,0 +1,23 @@
+1.下载vs code;
+2.windos 安装nodejs;
+3.准备安装wsl，通过管理员身份运行vscode，打开运行台，wsl --install,使windows可以 运行linux命令；
+4.vscode 安装remote development，可以打开wsl的运行台，安装solidity+hardhat；
+5.linux环境下安装nodejs，先安装nvm:curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash；
+6.linux下利用nvm安装nodejs:nvm install 16.16.0;
+7.安装yarn： npm install -g yarn
+8.yarn add solc\yarn add --dev dotenv;
+9.安装hardhat yarn init、yarn add --dev hardhat、yarn hardhat；
+10.运行hardhat中的js；yarn hardhat compile、yarn hardhat run scripts/deploy.js --network hardhat;
+11.获取区块链网络RPC_URL网址；https://dashboard.alchemyapi.io/
+12.获取区块链chainId网址:https://chainlist.org/zh
+13.yarn hardhat node;yarn hardhat console --network rinkeby\yarn hardhat test --grep update
+14.yarn add --dev @chainlink/contracts;yarn add --dev hardhat-deploy； yarn global add hardhat-shorthand；
+16.yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers;yarn hardhat deploy --tags mocks
+17.Unit tests are done locally;Staging tests are done on a testnet(Last Stop!!);
+18.storage的读写会花费较多的gas，全局变量成员变量会存储在storage中，我的了解storage就是合约运行完需要保留在磁盘的数据，下次再运行时会读取；类似于数据库；
+19.减少读写storage的数据会减少gas花费，比如遍历storage的数组时，可以用个memory数组来读取他，再操作这个临时数组。mapping不能备读取到内存中；
+20.constant & immutable 会节省gas费
+21.git init -b main;git status;git add .;git commit -m "init";git remote add origin https://github.com/ljw2652552/hardhat-fundme-fcc.git;git remote -v;git branch -M main;git push origin main
+22.solidity的event和log的gas费比storage高，且合约无法访问获取，存在另外一种特殊的数据结构中；主要功能就是给链下的应用进行监听回调使用；
+23.solidity的一个事件最多有3个indexed函数，称为topic,比非索引参数更加容易检索，但是比非索引参数消耗的gas更多；solidity在内存中不能创建动态数组？  10175
+24.solidity的在函数中用storage接受成员变量可以改变成员变量的值，calldata只存在函数的入参中也只存在内存中，如果一个函数要将自己的入参传递给另一个函数建议使用calldata，节省gas
