@@ -20,4 +20,6 @@
 21.git init -b main;git status;git add .;git commit -m "init";git remote add origin https://github.com/ljw2652552/hardhat-fundme-fcc.git;git remote -v;git branch -M main;git push origin main
 22.solidity的event和log的gas费比storage高，且合约无法访问获取，存在另外一种特殊的数据结构中；主要功能就是给链下的应用进行监听回调使用；
 23.solidity的一个事件最多有3个indexed函数，称为topic,比非索引参数更加容易检索，但是比非索引参数消耗的gas更多；solidity在内存中不能创建动态数组？  10175
-24.solidity的在函数中用storage接受成员变量可以改变成员变量的值，calldata只存在函数的入参中也只存在内存中，如果一个函数要将自己的入参传递给另一个函数建议使用calldata，节省gas
+24.solidity的在函数中用storage接受成员变量可以改变成员变量的值，calldata只存在函数的入参中也只存在内存中，如果一个函数要将自己的入参传递给另一个函数建议使用calldata，节省gas;
+25.yarn create next-app .;yarn run dev;
+26.yarn add --dev tailwindcss postcss autoprefixer;yarn tailwindcss init -p;安装postCss Language Support插件;安装 tailwind css插件
